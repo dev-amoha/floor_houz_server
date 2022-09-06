@@ -1,0 +1,39 @@
+version: "3.0"
+
+services:
+
+ postgres:
+   image: postgres
+   environment:
+     POSTGRES_USER: devmachine
+     POSTGRES_PASSWORD: pass123
+     PGDATA: /data/postgres
+   volumes:
+     - posrgres-data-floorhouz:/data/postgres
+   ports:
+     - "8088:5432"
+   networks:
+     - floor_houz_service_network
+   restart: always
+
+ pgadmin:
+   image: dpage/pgadmin4
+   environment:
+     PGADMIN_DEFAULT_EMAIL: dev@floorhouz.com
+     PGADMIN_DEFAULT_PASSWORD: Pass@123
+   volumes:
+     - pgadmin:/root/.pgadmin
+   ports:
+     - "8090:80"
+   networks:
+     - floor_houz_service_network 
+   restart: always
+
+networks:
+   floor_houz_service_network:
+volumes:
+   posrgres-data-floorhouz:
+   pgadmin:
+
+      
+ 

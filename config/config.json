@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "devmachine",
+    "password": "pass123",
+    "database": "floorhouz",
+    "port": 8088,
+    "host": "localhost",
+    "dialect": "postgres",
+    "schema": "floorhouz_customer"
+  }
+}
